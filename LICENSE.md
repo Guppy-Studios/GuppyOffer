@@ -1,4 +1,4 @@
-# LICENSE.md
+# LICENSE
 Copyright (c) 2025 GuppyStudios
 
 All rights reserved.
