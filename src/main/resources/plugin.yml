@@ -1,0 +1,16 @@
+name: GuppyOffer
+version: '${project.version}'
+main: com.tenshiku.guppyoffer.GuppyOffer
+api-version: '1.21'
+description: 'A plugin for offering items and receiving rewards'
+author: tenshiku
+depend: [WorldGuard]
+commands:
+  guppyoffer:
+    description: Reload the plugin configuration
+    usage: /guppyoffer reload
+    permission: guppyoffer.reload
+permissions:
+  guppyoffer.reload:
+    description: Allows reloading the plugin configuration
+    default: op

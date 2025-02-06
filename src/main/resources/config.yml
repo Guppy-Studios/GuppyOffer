@@ -1,0 +1,37 @@
+worlds:
+  valentines25:
+    region: "offering_altar"
+    offering-drop-location:
+      x: 29
+      y: 47
+      z: -6
+
+offerings:
+  DIAMOND:
+    chance: 50
+  NETHERITE_INGOT:
+    chance: 100
+
+rewards:
+  diamond_reward:
+    name: "Diamond Bundle"
+    command: "give {player} diamond 5"
+    chance: 50
+  netherite_reward:
+    name: "Netherite Ingot"
+    command: "give {player} netherite_ingot 1"
+    chance: 25
+  special_sword:
+    name: "Enchanted Diamond Sword"
+    command: "give {player} diamond_sword{Enchantments:[{id:sharpness,lvl:5}]} 1"
+    chance: 25
+
+sounds:
+  accepted-offering:
+    sound: ENTITY_PLAYER_LEVELUP
+    volume: 1.0
+    pitch: 1.0
+  rejected-offering:
+    sound: BLOCK_ANVIL_LAND
+    volume: 1.0
+    pitch: 0.5

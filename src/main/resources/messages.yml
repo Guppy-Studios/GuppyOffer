@@ -1,0 +1,3 @@
+messages:
+  reward-given: "<gradient:gold:yellow>The gods have blessed you with {item-name}!</gradient>"
+  invalid-offering: "<red>The gods do not accept this offering.</red>"
