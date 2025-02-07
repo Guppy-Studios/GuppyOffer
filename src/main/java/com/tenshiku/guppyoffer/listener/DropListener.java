@@ -90,6 +90,6 @@ public class DropListener implements Listener {
                     }
                 }
             }
-        }.runTaskLater(player.getServer().getPluginManager().getPlugin("GuppyOffer"), 10L);
+        }.runTaskLater(plugin, 10L);
     }
 }

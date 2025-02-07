@@ -1,7 +1,6 @@
 package com.tenshiku.guppyoffer.manager;
 
 import com.tenshiku.guppyoffer.GuppyOffer;
-import com.tenshiku.guppyoffer.model.Offering;
 import com.tenshiku.guppyoffer.model.Reward;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
@@ -11,13 +10,13 @@ import java.util.*;
 
 public class OfferingManager {
     private final GuppyOffer plugin;
-    private final Map<Material, Offering> offerings;
+    private final Set<Material> validOfferings;
     private final List<Reward> rewards;
     private final Random random;
 
     public OfferingManager(GuppyOffer plugin) {
         this.plugin = plugin;
-        this.offerings = new HashMap<>();
+        this.validOfferings = new HashSet<>();
         this.rewards = new ArrayList<>();
         this.random = new Random();
         loadOfferings();
@@ -29,14 +28,12 @@ public class OfferingManager {
         if (offeringsSection == null) return;
 
         for (String key : offeringsSection.getKeys(false)) {
-            Material material;
             try {
-                material = Material.valueOf(key.toUpperCase());
+                Material material = Material.valueOf(key.toUpperCase());
+                validOfferings.add(material);
             } catch (IllegalArgumentException e) {
                 plugin.getLogger().warning("Invalid material name in config: " + key);
-                continue;
             }
-            offerings.put(material, new Offering(material));
         }
     }
 
@@ -54,7 +51,7 @@ public class OfferingManager {
     }
 
     public boolean isValidOffering(Material material) {
-        return offerings.containsKey(material);
+        return validOfferings.contains(material);
     }
 
     public Reward giveReward(Player player) {
