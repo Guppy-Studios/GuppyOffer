@@ -83,8 +83,6 @@ messages:
 
 For issues, bug reports, or feature requests, please open an issue on our GitHub repository.
 
-
-# Updated README License Section
 ## License
 
 This project is proprietary software with restricted permissions. Users may view and modify the code for personal use, but redistribution in any form is prohibited. See the LICENSE file for full terms.
